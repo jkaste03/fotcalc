@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name=”robots” content=”noindex”>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Johannes Kaste">
+    <title id="title_data">UEFA Draw Computer</title>
+  </head>
+  <body>
+    <h1>Minecraft-Server</h1>
+    <button id="wolButton">Start server</button>
+    <script>
+      document.getElementById('wolButton').addEventListener('click', function() {
+        fetch('https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9')
+          .then(response => {
+            if (response.ok) {
+              console.log('Wake-on-LAN forespørsel sendt!');
+            } else {
+              console.error('Feil med forespørselen:', response.statusText);
+            }
+          })
+          .catch(error => {
+            console.error('Det oppstod en feil:', error);
+          });
+      });
+    </script>
+  </body>
+</html>
