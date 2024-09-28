@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Johannes Kaste">
-    <title id="title_data">UEFA Draw Computer</title>
-</head>
-<body>
-    <h1>Minecraft-Server</h1>
-    <button id="wolButton">Start server</button>
+    <head>
+        <meta name="robots" content="noindex">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Johannes Kaste">
+        <title id="title_data">UEFA Draw Computer</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif; /* Endre skrifttype */
+                background-color: #f0f0f0; /* Lys grå bakgrunn */
+                color: #333; /* Mørk grå tekstfarge */
+                display: flex; /* Flexbox for sentrering */
+                flex-direction: column; /* Vertikal retning */
+                align-items: center; /* Horisontal sentrering */
+                justify-content: center; /* Vertikal sentrering */
+                height: 100vh; /* Full høyde */
+                margin: 0; /* Fjerne marginer */
+            }
+    
+            h1 {
+                font-size: 2.5em; /* Større tekststørrelse */
+                margin-bottom: 20px; /* Avstand under overskriften */
+                text-align: center; /* Sentrer teksten */
+            }
+    
+            button {
+                background-color: #4CAF50; /* Grønn bakgrunnsfarge */
+                color: white; /* Hvit tekstfarge */
+                border: none; /* Ingen kantlinje */
+                border-radius: 5px; /* Rundede kanter */
+                padding: 15px 30px; /* Innvendig padding */
+                font-size: 1.2em; /* Større tekststørrelse */
+                cursor: pointer; /* Muspekeren blir til en hånd */
+                transition: background-color 0.3s; /* Jevn overgang ved hover */
+            }
+    
+            button:hover {
+                background-color: #45a049; /* Mørkere grønn ved hover */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Minecraft-Server</h1>
+        <button id="wolButton">Start server</button>
 
-    <script>
-        document.getElementById('wolButton').addEventListener('click', function() {
-            window.location.href = 'https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9';
-        });
-    </script>
-</body>
+        <script>
+            document.getElementById('wolButton').addEventListener('click', function() {
+                window.location.href = 'https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9';
+            });
+        </script>
+    </body>
 </html>
