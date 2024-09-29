@@ -44,10 +44,16 @@
     <body>
         <h1>Minecraft-Server</h1>
         <button id="wolButton">Start server</button>
+        <iframe id="wolIframe" style="display:none;" width="0" height="0"></iframe>
 
         <script>
-            document.getElementById('wolButton').addEventListener('click', function() {
-                window.location.href = 'https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9';
+            // document.getElementById('wolButton').addEventListener('click', function() {
+            //     window.location.href = 'https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9';
+            // });
+            document.getElementById("wolButton").addEventListener("click", function() {
+                var iframe = document.getElementById("wolIframe");
+                iframe.src = "https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9";
+                //iframe.style.display = "block"; // Gjør iframe synlig hvis du ønsker det
             });
         </script>
     </body>
