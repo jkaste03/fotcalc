@@ -94,7 +94,7 @@
             const mainContent = document.getElementById("mainContent");
 
             // Sjekk om brukeren allerede har logget inn
-            if (localStorage.getItem("loggedIn") === "true") {
+            if (sessionStorage.getItem("loggedIn") === "true") {
                 passwordOverlay.style.display = "none"; // Skjuler overlay
                 mainContent.style.display = "block"; // Viser innholdet
             } else {
@@ -105,7 +105,7 @@
             submitPasswordButton.addEventListener("click", function() {
                 const passwordHash = CryptoJS.SHA256(passwordInput.value).toString();
                 if (passwordHash === correctPasswordHash) {
-                    localStorage.setItem("loggedIn", "true"); // Lagre innloggingsstatus i localStorage
+                    sessionStorage.setItem("loggedIn", "true"); // Lagre innloggingsstatus i sessionStorage
                     passwordOverlay.style.display = "none"; // Skjuler overlay
                     mainContent.style.display = "block"; // Viser innholdet
                 } else {
