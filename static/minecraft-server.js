@@ -34,8 +34,8 @@ document.getElementById("wolButton").addEventListener("click", function() {
     wolButton.disabled = true; // Deaktiver knappen midlertidig
     wolButton.textContent = "Sender forespørsel..."; // Endre teksten
 
-    var iframe = document.getElementById("wolIframe");
-    iframe.src = "https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9";
+    // var iframe = document.getElementById("wolIframe");
+    // iframe.src = "https://www.depicus.com/wake-on-lan/woli?m=C8D3FF4437DB&i=84.211.133.68&s=255.255.255.0&p=9";
 
     // Simulerer en forsinkelse (f.eks. 0.5 sekunder) for å vise at forespørselen sendes
     setTimeout(function() {
