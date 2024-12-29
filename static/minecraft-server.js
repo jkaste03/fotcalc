@@ -49,3 +49,19 @@ document.getElementById("wolButton").addEventListener("click", function() {
         wolButton.textContent = "Start server"; // Tilbakestill teksten
     }, 60000);
 });
+
+document.getElementById("copyIpButton").addEventListener("click", function() {
+    const serverIp = document.getElementById("serverIp").textContent;
+    const copyIcon = document.getElementById("copyIcon");
+
+    // Kopier IP-adressen til utklippstavlen
+    navigator.clipboard.writeText(serverIp).then(function() {
+        // Endre ikon til sjekk
+        copyIcon.textContent = "✔️";
+        
+        // Sett tilbake til kopi-ikon etter 1 sekund
+        setTimeout(() => {
+            copyIcon.textContent = "📋";
+        }, 1000);
+    })
+});

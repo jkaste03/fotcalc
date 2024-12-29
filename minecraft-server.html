@@ -1,113 +1,158 @@
 <!DOCTYPE html>
 <html lang="no">
-    <head>
-        <meta name="robots" content="noindex">
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Johannes Kaste">
-        <title>Minecraft Server</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
-                color: #333;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                position: relative;
-            }
-    
-            .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.7);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            .password-container {
-                background-color: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                text-align: center;
-            }
-    
-            input[type="password"] {
-                padding: 10px;
-                font-size: 1em;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                width: 93%;
-            }
-    
-            button {
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                padding: 15px 30px;
-                font-size: 1.2em;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-    
-            button:hover {
-                background-color: #45a049;
-            }
-    
-            .content {
-                display: none;
-                text-align: center;
-            }
-            #message {
-                display: hidden; /* Start skjult */
-                max-width: 700px;
-                background-color: #f8d7da; /* Lys rød bakgrunn for feilmeldinger */
-                color: #721c24; /* Mørk rød tekstfarge */
-                border: 1px solid #f5c6cb; /* Lysere rød kantfarge */
-                border-radius: 5px; /* Runde kanter */
-                padding: 10px; /* Paddings for innholdet */
-                margin-top: 10px; /* Margin for avstand til andre elementer */
-                opacity: 0; /* Start med null opasitet for animasjon */
-                transition: opacity 0.5s ease-in-out; /* Animasjonseffekt */
-            }
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Johannes Kaste">
+    <title>Minecraft Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-image: url('media/minecraft/bilde1.png'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+        }
 
-            #message.show {
-                display: block; /* Vises når klassen 'show' legges til */
-                opacity: 1; /* Full opasitet når den vises */
-            }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        </style>
-    </head>
-    <body>
-        <div class="overlay" id="passwordOverlay">
-            <div class="password-container">
-                <h2>Passordbeskyttelse</h2>
-                <input type="password" id="passwordInput" placeholder="Skriv inn passord" />
-                <button id="submitPassword">Godkjenn</button>
-            </div>
+        .password-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px); /* Extra blur for the password box background */
+        }
+
+        .content {
+            display: none;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 1); /* Semi-transparent background for the main content */
+            padding: 20px;
+            border-radius: 8px;
+            width: 40%;
+            min-width: 300px;
+        }
+
+        #message {
+            display: hidden; /* Start skjult */
+            max-width: 100%;
+            background-color: #f8d7da; /* Lys rød bakgrunn for feilmeldinger */
+            color: #721c24; /* Mørk rød tekstfarge */
+            border: 1px solid #f5c6cb; /* Lysere rød kantfarge */
+            border-radius: 5px; /* Runde kanter */
+            padding: 10px; /* Paddings for innholdet */
+            margin-top: 10px; /* Margin for avstand til andre elementer */
+            opacity: 0; /* Start med null opasitet for animasjon */
+            transition: opacity 0.5s ease-in-out; /* Animasjonseffekt */
+        }
+
+        #message.show {
+            display: block; /* Vises når klassen 'show' legges til */
+            opacity: 1; /* Full opasitet når den vises */
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 93%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #copyIpButton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #333;
+            padding: 0px;
+            transition: transform 0.3s ease, color 0.3s;
+        }
+
+        #copyIpButton:hover {
+            color: #4CAF50;
+            transform: scale(1.2);
+        }
+
+        #copyFeedback {
+            font-size: 0.9em;
+            color: #4CAF50;
+            margin-left: 10px;
+            animation: fadeOut 1.5s forwards;
+        }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="overlay" id="passwordOverlay">
+        <div class="password-container">
+            <h2>Passordbeskyttelse</h2>
+            <p>Dette er en Survival Minecraft-Server. Her kan du starte serveren med et knappetrykk og se IP-adressen.</p>
+            <input type="password" id="passwordInput" placeholder="Skriv inn passord" />
+            <button id="submitPassword">Godkjenn</button>
         </div>
+    </div>
+    
+    <div class="content" id="mainContent">
+        <h1>Minecraft-Server</h1>
+        <p style="text-align: center;">
+            Server IP: <span id="serverIp" style="font-weight: bold;">84.211.133.68</span>
+            <button id="copyIpButton" title="Kopier IP">
+                <span id="copyIcon">📋</span>
+            </button>
+        </p>
         
-        <div class="content" id="mainContent">
-            <h1>Minecraft-Server</h1>
-            <button id="wolButton">Start server</button>
-            <br><br>
-            <div id="message">Serveren starter nå og vil være tilgjengelig om kort tid, med mindre den gjennomgår en sjelden oppdatering eller nedstengning.</div>
-            <iframe id="wolIframe" style="display:none;" width="0" height="0"></iframe>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-        <script
-            type="text/javascript" 
-            src="static/minecraft-server.js"
-        ></script>
-    </body>
+        <button id="wolButton">Start server</button>
+        <br><br>
+        <div id="message">Serveren starter nå og vil være tilgjengelig om kort tid, med mindre den gjennomgår en sjelden oppdatering eller nedstengning.</div>
+        <iframe id="wolIframe" style="display:none;" width="0" height="0"></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script type="text/javascript" src="static/minecraft-server.js"></script>
+</body>
 </html>
