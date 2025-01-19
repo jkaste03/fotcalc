@@ -47,7 +47,7 @@ document.getElementById("wolButton").addEventListener("click", function() {
         messageDiv.classList.remove("show");
         wolButton.disabled = false; // Aktiver knappen igjen
         wolButton.textContent = "Start server"; // Tilbakestill teksten
-    }, 60000);
+    }, 80000);
 });
 
 document.getElementById("copyIpButton").addEventListener("click", function() {
