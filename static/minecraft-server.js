@@ -22,10 +22,10 @@ submitPasswordButton.addEventListener("click", function() {
         sessionStorage.setItem("loggedIn", "true"); // Lagre innloggingsstatus i sessionStorage
         passwordOverlay.style.display = "none"; // Skjuler overlay
         mainContent.style.display = "block"; // Viser innholdet
-    } else {
-        messageDiv.textContent = "Feil passord!"; // Feilmelding ved feil passord
-        messageDiv.style.display = "block"; // Viser feilmelding
-    }
+    }// else {
+    //     messageDiv.textContent = "Feil passord!"; // Feilmelding ved feil passord
+    //     messageDiv.style.display = "block"; // Viser feilmelding
+    // }
 });
 
 // WOL-knappen
