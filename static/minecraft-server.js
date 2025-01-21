@@ -19,13 +19,16 @@ if (sessionStorage.getItem("loggedIn") === "true") {
 submitPasswordButton.addEventListener("click", function() {
     const passwordHash = CryptoJS.SHA256(passwordInput.value).toString();
     if (passwordHash === correctPasswordHash) {
+        errorMessage.style.display = "none";
         sessionStorage.setItem("loggedIn", "true"); // Lagre innloggingsstatus i sessionStorage
         passwordOverlay.style.display = "none"; // Skjuler overlay
         mainContent.style.display = "block"; // Viser innholdet
-    }// else {
-    //     messageDiv.textContent = "Feil passord!"; // Feilmelding ved feil passord
-    //     messageDiv.style.display = "block"; // Viser feilmelding
-    // }
+    } else {
+        errorMessage.style.display = "block";
+        errorMessage.classList.add("show");
+    //  messageDiv.textContent = "Feil passord!"; // Feilmelding ved feil passord
+    //  messageDiv.style.display = "block"; // Viser feilmelding
+    }
 });
 
 // WOL-knappen
