@@ -1,1 +1,1 @@
-/api/* https://springboot-app-530917362487.europe-north1.run.app/:splat 200
+/historical-opta-power-rankings http://ider-database.westeurope.cloudapp.azure.com:8081/historical-opta-power-rankings/:splat 200
