@@ -1,4 +1,5 @@
-.container_, .container__ {
+.container_,
+.container__ {
     display: block;
 }
 .reklame_øverst {
@@ -21,7 +22,9 @@
 .dropdown_land {
     z-index: 1000;
 }
-.reaklame_sidene, .reaklame_sidene_4aar, .reaklame_sidene_kpost24 {
+.reaklame_sidene,
+.reaklame_sidene_4aar,
+.reaklame_sidene_kpost24 {
     /* background-color: #4482c0; */
     width: 300px;
     margin-top: 803px;
@@ -37,15 +40,15 @@
 
     abbr[data_title] {
         position: relative;
-            
+
         /* ensure consistent styling across browsers */
         text-decoration: underline !important;
-    }        
+    }
     abbr[data_title]:hover::after,
     abbr[data_title]:focus::after {
         content: attr(data_title);
         cursor: default !important;
-            
+
         /* position tooltip like the native one */
         position: absolute;
         left: 0;
@@ -53,7 +56,7 @@
         width: auto;
         white-space: nowrap;
         z-index: 1;
-            
+
         /* style tooltip */
         background-color: #343a40;
         color: rgb(240, 240, 240);
@@ -74,25 +77,24 @@
     }
 }
 
-
-body{
+body {
     background-image: url("../media/klubb_bakgrunn_liten.png");
     background-size: contain;
     background-color: rgb(196, 217, 255);
     font-family: sans-serif;
-		/* overflow-y: hidden !important; */
-		overflow-x: hidden !important;
+    /* overflow-y: hidden !important; */
+    overflow-x: hidden !important;
 }
 /* html, body {
 	overflow-x: hidden !important;
 } */
-@media screen and (max-width:1200px){
-    body{
+@media screen and (max-width: 1200px) {
+    body {
         background-size: 206% !important;
     }
 }
-@media screen and (max-width:700px){
-    body{
+@media screen and (max-width: 700px) {
+    body {
         background-size: 308% !important;
     }
 }
@@ -100,19 +102,27 @@ body{
     background-color: #343a40;
 }
 .btn-link {
-    text-align:left;
+    text-align: left;
     padding-left: 0px !important;
 }
 #hjem {
     margin-right: 1rem !important;
 }
-#premiepenger_kalkulator, #koeffisient_kalkulator, #landskoeff_rangering, #klubbkoeff_rangering, #ti_års_rangering, #fire_års_rangering, #women_access_list {
-    margin-right: .65rem !important;
+#premiepenger_kalkulator,
+#koeffisient_kalkulator,
+#landskoeff_rangering,
+#klubbkoeff_rangering,
+#ti_års_rangering,
+#fire_års_rangering,
+#opta_power_rankings_chart,
+#women_access_list {
+    margin-right: 0.65rem !important;
 }
-#fire_års_rangering {
+#opta_power_rankings_chart {
     margin-right: 2rem !important;
 }
-#norsk, #english {
+#norsk,
+#english {
     color: rgb(196, 217, 255);
     color: rgb(196, 217, 255);
     font-size: 14px !important;
@@ -125,56 +135,77 @@ body{
 .navbar-dark .navbar-nav .nav-link {
     font-size: 14px !important;
     padding-bottom: 4px !important;
-    color:rgba(250, 250, 250, 0.7);
+    color: rgba(250, 250, 250, 0.7);
     padding-left: 0rem !important;
     padding-right: 18px !important;
 }
 
-@media screen and (min-width:1100px) {
+@media screen and (min-width: 1100px) {
     .en_to_rader {
         display: flex;
     }
 }
-@media screen and (max-width:1099px) {
+@media screen and (max-width: 1099px) {
     #fire_års_rangering {
         padding-right: 0px !important;
         margin-right: 0px !important;
     }
 }
 
-.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color:rgba(250, 250, 250, 1);
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(250, 250, 250, 1);
 }
-#overskrift_klubbkoeffisient, #overskrift_landskoeffisient, #overskrift_forside, th, #overskrift_premiepenger, #overskrift_koeffisient, #overskrift_ti_års, #overskrift_fire_års, #overskrift_data {
+#overskrift_klubbkoeffisient,
+#overskrift_landskoeffisient,
+#overskrift_forside,
+th,
+#overskrift_premiepenger,
+#overskrift_koeffisient,
+#overskrift_ti_års,
+#overskrift_fire_års,
+#overskrift_data {
     color: rgba(52, 58, 64, 1);
 }
-#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #clubs, #internt_oppgjør_asterisk, #beskrivelse_forside, #beskrivelse_premiepenger, #beskrivelse_premiepenger_post,  #beskrivelse_koeffisient, #beskrivelse_ti_års, #beskrivelse_ti_års_post, #beskrivelse_fire_års, #per_country, #beskrivelse_data {
+#beskrivelse_klubbkoeffisient,
+#beskrivelse_landskoeffisient,
+#clubs,
+#internt_oppgjør_asterisk,
+#beskrivelse_forside,
+#beskrivelse_premiepenger,
+#beskrivelse_premiepenger_post,
+#beskrivelse_koeffisient,
+#beskrivelse_ti_års,
+#beskrivelse_ti_års_post,
+#beskrivelse_fire_års,
+#per_country,
+#beskrivelse_data {
     color: rgba(52, 58, 64, 0.9);
 }
 .ytterst_tabell_div {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     height: fit-content;
     margin-left: -2%;
     margin-right: -0.1% !important;
     background-color: white;
-    width:fit-content;
+    width: fit-content;
     margin-bottom: calc(-0.4% - 5px);
     border-radius: 0.5rem;
     border-bottom-right-radius: 0px;
 }
-.ytre_tabell_div{
+.ytre_tabell_div {
     width: fit-content;
-    height:fit-content;
-    padding-top:.6rem;
+    height: fit-content;
+    padding-top: 0.6rem;
     border-radius: 0.5rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    display:inline-flex;
+    display: inline-flex;
     margin-right: -1.5%;
     margin-left: 0.5%;
 }
-.sesong{
+.sesong {
     color: #4a56ff;
 }
 /*Dropdown meny start*/
@@ -187,7 +218,7 @@ body{
 #myInput {
     color: #343a40;
     box-sizing: border-box;
-    background-image: url('../media/search-svgrepo-com.svg');
+    background-image: url("../media/search-svgrepo-com.svg");
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -212,17 +243,21 @@ body{
     filter: brightness(20%);
 }
 
-#myInput:focus,.knapp_clean:focus {outline: none; border-bottom: 3px solid #ddd;}
+#myInput:focus,
+.knapp_clean:focus {
+    outline: none;
+    border-bottom: 3px solid #ddd;
+}
 
 .dropdown {
     position: relative;
     width: fit-content;
     float: left;
-    height: 3,4rem;
+    height: 3, 4rem;
     margin-top: 9px;
     margin-right: 12px;
     border-top-right-radius: 5px;
-    margin-left: .75rem;
+    margin-left: 0.75rem;
 }
 
 .dropdown-content {
@@ -235,14 +270,14 @@ body{
     z-index: 1;
 }
 .dropdown_elementer {
-    max-height:250px;/* you can change as you need it */
-    overflow-x:auto;/* to get scroll */
+    max-height: 250px; /* you can change as you need it */
+    overflow-x: auto; /* to get scroll */
     overflow-x: hidden;
 }
 .meny_element {
     color: #343a40;
     width: 100%;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
     text-align: left;
     padding: 2px 16px;
@@ -251,49 +286,53 @@ body{
     font-style: italic;
     border-bottom: 1px solid rgb(230, 230, 230);
 }
-.meny_element:hover { 
+.meny_element:hover {
     background-color: rgb(221, 221, 221);
     border-left: 2px solid rgb(200, 200, 200);
 }
 
-.show {display: block;}
+.show {
+    display: block;
+}
 
-
-.opp_ned_pil{
+.opp_ned_pil {
     margin-left: 0.7rem;
-    float:right;
+    float: right;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
-.meny_element.active,.meny_element:focus,.meny_element:active,.meny_element:focus:active {
-    box-shadow:none !important;
+.meny_element.active,
+.meny_element:focus,
+.meny_element:active,
+.meny_element:focus:active {
+    box-shadow: none !important;
     outline: none !important;
 }
 /*Dropdown menu, ferdig*/
 
-.tabell_div{
-    width:104%;
-    background-color:white;
-    border-radius: .5rem;
+.tabell_div {
+    width: 104%;
+    background-color: white;
+    border-radius: 0.5rem;
     border-top-left-radius: 0;
-    padding-bottom: .1%;
+    padding-bottom: 0.1%;
     padding-top: calc(0.7% + 5px);
-    margin-left:-1.99%;
-    overflow-x:auto;
-		overflow-y:hidden !important;
+    margin-left: -1.99%;
+    overflow-x: auto;
+    overflow-y: hidden !important;
 }
-.tabell_div_2{
-    width:104%;
-    background-color:white;
-    border-radius: .5rem;
-    padding-bottom: .1%;
+.tabell_div_2 {
+    width: 104%;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding-bottom: 0.1%;
     padding-top: calc(0.7% + 5px);
-    margin-left:-1.99%;
-    overflow-x:auto;
-		overflow-y:hidden !important;
+    margin-left: -1.99%;
+    overflow-x: auto;
+    overflow-y: hidden !important;
 }
 /* footer div{
     height: 24rem;
@@ -303,14 +342,15 @@ footer {
     background-color: #343a40;
 }
 .laget_av {
-   text-align: center;
-   padding-top: 3rem;
+    text-align: center;
+    padding-top: 3rem;
 }
 .tekst_1 {
     color: rgb(196, 217, 255);
 }
-.logo_twitter:hover{
-    filter: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(4998%) hue-rotate(187deg) brightness(101%) contrast(101%);
+.logo_twitter:hover {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(4998%)
+        hue-rotate(187deg) brightness(101%) contrast(101%);
 }
 a {
     color: #4a56ff;
@@ -321,20 +361,25 @@ a:not(.poengtype_overskrift, #link_lands_klubb, .nav-link) {
 a:hover {
     color: rgb(196, 217, 255);
 }
-.graa_hover_link, .graa_hover_link_koeff_deffi, .graa_hover_link_tabell_header, .graa_hover_link_decisive {
+.graa_hover_link,
+.graa_hover_link_koeff_deffi,
+.graa_hover_link_tabell_header,
+.graa_hover_link_decisive {
     padding-left: 0px !important;
 }
-.graa_hover_link:hover, .graa_hover_link_2:hover {
+.graa_hover_link:hover,
+.graa_hover_link_2:hover {
     color: #929292;
 }
-.graa_hover_link_koeff_deffi:hover, .poengtype_overskrift:hover {
+.graa_hover_link_koeff_deffi:hover,
+.poengtype_overskrift:hover {
     color: #343a40;
 }
 .graa_hover_link_decisive:hover {
     color: rgba(52, 58, 64, 0.6);
 }
 .graa_hover_link_decisive {
-    color: rgba(74, 86, 255, 0.8)
+    color: rgba(74, 86, 255, 0.8);
 }
 .graa_hover_link_tabell_header:hover {
     color: rgb(73, 80, 87);
@@ -342,11 +387,15 @@ a:hover {
 #koeff_reklame {
     font-weight: bold;
 }
-#kilde_koeff_id, #kilde_koeff_id_post_24, #marketPool_id2, #covid_id {
-	margin: 0px !important;
-	height: 19.5px
+#kilde_koeff_id,
+#kilde_koeff_id_post_24,
+#marketPool_id2,
+#covid_id {
+    margin: 0px !important;
+    height: 19.5px;
 }
-#legend, #access_list {
+#legend,
+#access_list {
     font-style: italic;
 }
 #mailto {
@@ -356,35 +405,38 @@ a:hover {
     padding-left: 0px !important;
 }
 #Layer_1 {
-    fill:red;
+    fill: red;
 }
 .sentrer {
     text-align: center;
 }
-.marketPool, #koeff_bidrag_beskrivelse, #etter120_beskrivelse {
+.marketPool,
+#koeff_bidrag_beskrivelse,
+#etter120_beskrivelse {
     font-size: 13px !important;
     color: rgba(52, 58, 64, 0.658);
 }
-#uefa_distribution_link,#klubb_link {
+#uefa_distribution_link,
+#klubb_link {
     color: #4a56ffec;
 }
-#uefa_distribution_link:hover,#klubb_link:hover {
+#uefa_distribution_link:hover,
+#klubb_link:hover {
     color: rgba(52, 58, 64, 0.658);
 }
 
-
-
 .btn-secondary:disabled {
-    background-color: rgba(255,255,255,0);
-    border-color: rgba(255,255,255,0);
-    color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
 }
 .btn-secondary:hover:enabled {
-    background-color: rgba(255,255,255,0);
-    border-color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
     color: #4a56ff !important;
 }
-.btn-secondary:active:enabled, .btn.btn-secondary:active:enabled {
+.btn-secondary:active:enabled,
+.btn.btn-secondary:active:enabled {
     background-color: white !important;
     border-color: white !important;
     color: #2130ff !important;
@@ -395,7 +447,9 @@ a:hover {
 #sessong_kontroller_2 {
     margin-left: -2px !important;
 }
-.btn-secondary.dropdown-toggle:focus:enabled, .btn-secondary.focus:enabled, .btn-secondary:focus:enabled {
+.btn-secondary.dropdown-toggle:focus:enabled,
+.btn-secondary.focus:enabled,
+.btn-secondary:focus:enabled {
     background-color: white !important;
     border-color: white !important;
     color: rgb(154, 176, 218);
@@ -403,14 +457,18 @@ a:hover {
 .nav-link {
     padding-right: 16px !important;
 }
-.reklame_landskoeff, #premiepenger_bidrag_beskrivelse, #koeff_bidrag_beskrivelse, #etter120_beskrivelse {
+.reklame_landskoeff,
+#premiepenger_bidrag_beskrivelse,
+#koeff_bidrag_beskrivelse,
+#etter120_beskrivelse {
     color: rgba(52, 58, 64, 0.6);
     font-size: 14px;
     font-style: italic;
 }
-#kilde_koeff_id, #kilde_koeff_id_post_24 {
-	color: rgba(52, 58, 64, 0.6);
-	font-size: 14px;
+#kilde_koeff_id,
+#kilde_koeff_id_post_24 {
+    color: rgba(52, 58, 64, 0.6);
+    font-size: 14px;
 }
 .landskoeff_link {
     padding-left: 0px !important;
@@ -428,11 +486,11 @@ a:hover {
     color: #6872ff;
 }
 .linkContribution {
-	padding-left: 0px !important;
-	color: #838bff;
+    padding-left: 0px !important;
+    color: #838bff;
 }
 .linkContribution:hover {
-	color: #3c49ff !important;
+    color: #3c49ff !important;
 }
 .klubb_logo_kalkulatorer {
     margin-right: 5px !important;
@@ -446,15 +504,17 @@ a:hover {
     height: 20px !important;
 }
 .dropdown-content-egen-bredde {
-    width:283px !important;
+    width: 283px !important;
 }
-.klubb_logo, .klubb_logo_4y {
+.klubb_logo,
+.klubb_logo_4y {
     margin-right: 6px;
     margin-bottom: 2.3px;
     height: 20px;
     width: 20px;
 }
-.ramme_hoyre_tynn, .ramme_hoyre {
+.ramme_hoyre_tynn,
+.ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 .veldig_utydelig {
@@ -464,10 +524,12 @@ a:hover {
     background-color: #343a4012;
 }
 .senter {
-    width:fit-content;
+    width: fit-content;
     margin: auto;
 }
-.container_, .container_4_aar, .container__ {
+.container_,
+.container_4_aar,
+.container__ {
     display: flex;
     /* min-height: 69vh; */
     flex-direction: column;
@@ -495,25 +557,38 @@ a:hover {
     z-index: 1001;
 }
 .fortsatt_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(193, 215, 255) 25%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(193, 215, 255) 25%,
+        rgba(255, 255, 255, 0) 100%
+    );
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
     /* display:inline-table !important; */
 }
 .var_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(192, 255, 214) 25%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(192, 255, 214) 25%,
+        rgba(255, 255, 255, 0) 100%
+    );
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
 .ramme_ikke_grønn {
     border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-.reklame_bunn_margin, #beskrivelse_landskoeffisient, #clubs, #internt_oppgjør_asterisk {
+.reklame_bunn_margin,
+#beskrivelse_landskoeffisient,
+#clubs,
+#internt_oppgjør_asterisk {
     margin-left: 15px !important;
     margin-right: 15px !important;
 }
 #spoiler {
-    padding:3px;
+    padding: 3px;
     height: 38px;
     width: 29px;
     margin-top: 9px;
@@ -532,7 +607,7 @@ a:hover {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 .premie_koeff_3 {
-    vertical-align:middle;
+    vertical-align: middle;
     min-width: 34px;
     margin: 0 auto;
 }
@@ -540,12 +615,18 @@ a:hover {
     padding-left: 13px;
 }
 .reklame_topp {
-    background-color:#343a40;
+    background-color: #343a40;
     padding-left: 11%;
     padding-right: 11%;
 }
-.valgt_element, .valgt_element2 {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(195, 217, 255, 0.8) 25%, rgba(0,0,0,0) 100%);
+.valgt_element,
+.valgt_element2 {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(195, 217, 255, 0.8) 25%,
+        rgba(0, 0, 0, 0) 100%
+    );
     border-top: 1px solid rgb(183, 183, 183);
     border-bottom: 1px solid rgb(183, 183, 183);
 }
@@ -556,28 +637,30 @@ a:hover {
 .flagg_div2 {
     margin-left: 4.1px;
     margin-top: 2.3px;
-    float:left;
+    float: left;
     height: 19.1px;
     width: 19.1px;
     border-radius: 100%;
     background-color: rgba(161, 161, 161, 0.5);
-    border: .8px solid rgb(0,0,0,0);
-    box-shadow: .6px .6px rgba(110, 110, 110, 0.5);
+    border: 0.8px solid rgb(0, 0, 0, 0);
+    box-shadow: 0.6px 0.6px rgba(110, 110, 110, 0.5);
 }
 #NIR__ {
     border-radius: 50%;
 }
-#NIR, #NIRe {
+#NIR,
+#NIRe {
     border-radius: 50%;
 }
 .land_klubb_rank {
     background-color: #fcffe4 !important;
 }
-.land_klubb_rank .id_nr, .inaktiv_klubb .veldig_utydelig {
+.land_klubb_rank .id_nr,
+.inaktiv_klubb .veldig_utydelig {
     border-right: none !important;
 }
 .inaktiv_klubb .id_nr:not(.veldig_utydelig) {
-    border-right: 1px solid rgba(0,0,0,0) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0) !important;
 }
 .inaktiv_klubb .id_nr {
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
@@ -587,54 +670,81 @@ a:hover {
     margin-left: 0px !important;
 }
 .tooltip-content {
-	visibility: hidden;
-	width: 500px;
-	text-align: left;
-	background-color: #343a40;
-	color: rgb(240, 240, 240);
-	border-radius: 6px;
-	position: absolute;
-	z-index: 1;
-	transform: translateX(-50%);
-	left: 248px;
-	bottom: -68px;
-	cursor: default !important;
-	/* style tooltip */
-	border-radius: 3px;
-	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-	font-size: 14px;
-	padding: 3px 5px;
+    visibility: hidden;
+    width: 500px;
+    text-align: left;
+    background-color: #343a40;
+    color: rgb(240, 240, 240);
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-50%);
+    left: 248px;
+    bottom: -68px;
+    cursor: default !important;
+    /* style tooltip */
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    padding: 3px 5px;
 }
 
 .tooltip-container:hover .tooltip-content {
-	visibility: visible;
+    visibility: visible;
 }
 
 .tooltip-container {
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 #AnchorNav {
-	position: fixed;
-	rotate: 90deg;
-	top: 19rem;
-	display: block !important;
-	translate: calc(-43.6%) 0;
+    position: fixed;
+    rotate: 90deg;
+    top: 19rem;
+    display: block !important;
+    translate: calc(-43.6%) 0;
 }
 .AnchorBtn {
-	background-color: white;
-	border-top-left-radius: .2rem;
-	border-top-right-radius: .2rem;
-	display: inline-block;
-	padding: .2rem .5rem;
+    background-color: white;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
 }
 html {
-  scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
 }
 .pensjonert {
-	background-color: rgb(255, 211, 211);
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+    background-color: rgb(255, 211, 211);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Grunnleggende shine-effekt på teksten */
+#opta_power_rankings_chart {
+    background: linear-gradient(
+        120deg,
+        rgba(0, 210, 255, 0.8) 0%,
+        /* transparent start */ rgba(0, 210, 255, 1) 50%,
+        /* sterk blågrønn glans i midten */ rgba(58, 123, 213, 0.5) 100%
+            /* transparent slutt */
+    );
+    background-size: 200% 100%; /* dobler bredden for jevn bevegelse */
+    background-clip: text; /* klipper gradient til tekstformen */
+    -webkit-background-clip: text; /* Safari/WebKit-støtte */
+    color: transparent; /* skjuler original tekstfarge */
+    display: inline-block; /* nødvendig for å klippe kun teksten */
+    animation: shine 3s infinite linear; /* 5 sek, uendelig, jevn hastighet */
+}
+
+/* Keyframes for venstre → høyre-bevegelse */
+@keyframes shine {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
 }
