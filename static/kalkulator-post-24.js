@@ -178,15 +178,18 @@ if (aarstall == 'NaN' || (!aarstall && aarstall != 0)) {
     aarstall = nåværende_sesong_forside[0] - 21;
 }
 localStorage.setItem('sessong', aarstall);
-if (aarstall > 3) {
-    aarstall = 3
+if (aarstall > 4) {
+    aarstall = 4
 }
 if (aarstall < 3) {
     location.href = '/prize-money-calculator';
 }
-else if (aarstall == 3) {
+else if (aarstall == 4) {
     document.getElementById('sessong_kontroller_1').disabled = false;
     document.getElementById('sessong_kontroller_2').disabled = true;
+} else {
+    document.getElementById('sessong_kontroller_1').disabled = false;
+    document.getElementById('sessong_kontroller_2').disabled = false;
 }
 oppdater_sessong(aarstall)
 
@@ -1513,6 +1516,11 @@ function endre_sessong(clicked_id) {
         location.href = '/prize-money-calculator';
     }
     else {
+        if (aarstall == 4) {
+            document.getElementById('sessong_kontroller_2').disabled = true;
+        } else {
+            document.getElementById('sessong_kontroller_2').disabled = false;
+        }
         slett("nei")
         oppdater_ved_refresh_1()
         oppdater_sessong(aarstall)

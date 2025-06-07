@@ -88,8 +88,8 @@ if (aarstall == 'NaN' || (!aarstall && aarstall != 0)) {
 }
 aarstall = parseInt(aarstall)
 localStorage.setItem('sessong', aarstall);
-if (aarstall > 3) {
-    aarstall = 3
+if (aarstall > 4) {
+    aarstall = 4
 }
 else if (aarstall < 3) {
     location.href = '/coefficient-calculator';
@@ -98,7 +98,7 @@ else if (aarstall == 0) {
     document.getElementById('sessong_kontroller_1').disabled = true;
     // document.getElementById('sessong_kontroller_2').disabled = false;
 }
-else if (aarstall == 3) {
+else if (aarstall == 4) {
     document.getElementById('sessong_kontroller_1').disabled = false;
     document.getElementById('sessong_kontroller_2').disabled = true;
 }
@@ -542,6 +542,11 @@ function endre_sessong(clicked_id) {
         location.href = '/coefficient-calculator';
     }
     else {
+        if (aarstall == 4) {
+            document.getElementById('sessong_kontroller_2').disabled = true;
+        } else {
+            document.getElementById('sessong_kontroller_2').disabled = false;
+        }
         slett("nei")
         oppdater_sessong(aarstall)
         oppdater_ved_refresh_koeff_1()
