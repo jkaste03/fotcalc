@@ -204,146 +204,153 @@ function oppdater_ved_refresh() {
   }
   for (i = 0; i < menyvalg.length; i++) {
     if (!klubber_allerede_lagt_til.includes(menyvalg[i][0])) {
-      let assos_ranking_array = [];
-      assos_ranking_array.push(menyvalg[i][0])
-      let sesong4 = "";
-      let sesong3 = "";
-      let sesong2 = "";
-      let sesong1 = "";
-			let besteRunde = 0;
-			let besteRundeSesong = 0
-      // sesong4 = menyvalg[i][9 + ((aar_etter_forste_periode - 1) * antall_MV_elem)] || ""
-      // sesong3 = menyvalg[i][9 + ((aar_etter_forste_periode - 2) * antall_MV_elem)] || ""
-      // sesong2 = menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)] || ""
-      let sesonger = [sesong1,sesong2,sesong3,sesong4];
-      let l = 0;
-      if (aar_etter_forste_periode > 3) {
-        l = -1;
-      }
-      for (; l < 3; l++) {
-				let knapper_ = ((menyvalg[i][2 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").split(",");
-        if (knapper_.includes("b18")) {
-          let plassering = ((menyvalg[i][5 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").split(",")[0];
-      let seierPoeng = 3;
-      if (aar_etter_forste_periode - 3+l < 3) {
-      sesonger[l+1] = 4;
-      seierPoeng = 2;
-      }
-      else {
-      sesonger[l+1] = 3;
-      }
-          if (besteRunde <= 18) {
-            besteRunde = 18;
-            besteRundeSesong = l+1;
-          }
-          if (besteRunde <= 20 && plassering <= 24 && plassering >= 9) {
-            besteRunde = 20;
-            besteRundeSesong = l+1;
-          }
-      let seierVal = parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "0").split(",")[0] * seierPoeng);
-      sesonger[l+1] += seierVal;
-      let ekstraVal = parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "0").split(",")[3]) || 0;
-      sesonger[l+1] += ekstraVal;
-      if (knapper_.includes("b21")) {
-      if (aar_etter_forste_periode - 3+l < 3) {
-        sesonger[l+1] += 1
-        if (["1","2"].includes(menyvalg[i][5 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].replaceAll(",",""))) {
-        sesonger[l+1] += 4;
-        for (j = 0; j < knapper_.length; j++) {
-          if (["b24","b27","b30"].includes(knapper_[j])) {
-          sesonger[l+1] += 1;
-          }
-                  if (["b21","b24","b27","b30","b33"].includes(knapper_[j])) {
-                    if (parseInt(knapper_[j].slice(-2)) >= besteRunde) {
-                      besteRunde = parseInt(knapper_[j].slice(-2))
-                      besteRundeSesong = l+1
-                    } 
-                  }
+        let assos_ranking_array = [];
+        assos_ranking_array.push(menyvalg[i][0]);
+        let sesong4 = "";
+        let sesong3 = "";
+        let sesong2 = "";
+        let sesong1 = "";
+        let besteRunde = 0;
+        let besteRundeSesong = 0;
+        // sesong4 = menyvalg[i][9 + ((aar_etter_forste_periode - 1) * antall_MV_elem)] || ""
+        // sesong3 = menyvalg[i][9 + ((aar_etter_forste_periode - 2) * antall_MV_elem)] || ""
+        // sesong2 = menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)] || ""
+        let sesonger = [sesong1, sesong2, sesong3, sesong4];
+        let l = 0;
+        if (aar_etter_forste_periode > 3) {
+            l = -1;
         }
-        }
-      }
-      else {
-        // sesonger[l+1] += 3;
-        // console.log(`sesonger[${l+1}] += 3 (late season, b21)`);
-        for (j = 0; j < knapper_.length; j++) {
-        if (["b21","b24","b27","b30"].includes(knapper_[j])) {
-          sesonger[l+1] += 3;
-        }
-                if (["b18","b21","b24","b27","b30","b33"].includes(knapper_[j])) {
-                  if (parseInt(knapper_[j].slice(-2)) >= besteRunde) {
-                    besteRunde = parseInt(knapper_[j].slice(-2))
-                    besteRundeSesong = l+1
-                  } 
+        for (; l < 3; l++) {
+            let knapper_ = (menyvalg[i][2 + (aar_etter_forste_periode - 3 + l) * antall_MV_elem] || "").split(",");
+            if (knapper_.includes("b18")) {
+                console.log(menyvalg[i][0] + " deltar" + (l + 1));
+                let plassering = (menyvalg[i][5 + (aar_etter_forste_periode - 3 + l) * antall_MV_elem] || "").split(",")[0];
+                let seierPoeng = 3;
+                if (aar_etter_forste_periode - 3 + l < 3) {
+                    sesonger[l + 1] = 4;
+                    seierPoeng = 2;
+                } else {
+                    sesonger[l + 1] = 3;
                 }
+                if (besteRunde <= 18) {
+                    besteRunde = 18;
+                    besteRundeSesong = l + 1;
+                }
+                if (besteRunde <= 20 && plassering <= 24 && plassering >= 9) {
+                    besteRunde = 20;
+                    besteRundeSesong = l + 1;
+                }
+                let seierVal = parseInt((menyvalg[i][4 +(aar_etter_forste_periode - 3 + l)*antall_MV_elem] || "0").split(",")[0] * seierPoeng);
+                sesonger[l + 1] += seierVal;
+                let ekstraVal = parseInt((menyvalg[i][4 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem] || "0").split(",")[3]) || 0;
+                sesonger[l + 1] += ekstraVal;
+                if (knapper_.includes("b21")) {
+                    if (aar_etter_forste_periode - 3 + l < 3) {
+                        sesonger[l + 1] += 1;
+                        if (["1", "2"].includes(menyvalg[i][5 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem].replaceAll(",", ""))) {
+                            sesonger[l + 1] += 4;
+                            for (j = 0; j < knapper_.length; j++) {
+                                if (["b24", "b27", "b30"].includes(knapper_[j])) {
+                                    sesonger[l + 1] += 1;
+                                }
+                                if (["b21","b24","b27","b30","b33",].includes(knapper_[j])) {
+                                    if (parseInt(knapper_[j].slice(-2)) >= besteRunde) {
+                                        besteRunde = parseInt(knapper_[j].slice(-2));
+                                        besteRundeSesong = l + 1;
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        // sesonger[l+1] += 3;
+                        // console.log(`sesonger[${l+1}] += 3 (late season, b21)`);
+                        for (j = 0; j < knapper_.length; j++) {
+                            if (["b21", "b24", "b27", "b30"].includes(knapper_[j])) {
+                                sesonger[l + 1] += 3;
+                            }
+                            if (["b18","b21","b24","b27","b30","b33",].includes(knapper_[j])) {
+                                if (parseInt(knapper_[j].slice(-2)) >= besteRunde) {
+                                    besteRunde = parseInt(knapper_[j].slice(-2));
+                                    besteRundeSesong = l + 1;
+                                }
+                            }
+                        }
+                    }
+                    let seier_uav = [];
+                    if (menyvalg[i][6 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem] && ((menyvalg[i][6 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem].split(",").length -1 >=35 && aar_etter_forste_periode - 3 + l < 3) || (menyvalg[i][6 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem].split(",").length -1 >= 39 &&aar_etter_forste_periode - 3 + l >= 3))) {
+                        if (aar_etter_forste_periode - 3 + l < 3) {
+                            seier_uav = (
+                                menyvalg[i][6 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem] || "").replace(/([^\,]*\,){35}/, "").split(",");
+                        } else {
+                            seier_uav = (menyvalg[i][6 +(aar_etter_forste_periode - 3 + l) *antall_MV_elem] || "")
+                                .replace(/([^\,]*\,){39}/, "")
+                                .split(",");
+                        }
+                        for (j = 0; j < seier_uav.length; j++) {
+                            if (
+                                seier_uav[j] &&
+                                [0, 3, 8, 11, 17, 20, 26].includes(j)
+                            ) {
+                                if (aar_etter_forste_periode - 3 + l < 3) {
+                                    sesonger[l + 1] += seier_uav[j] - 1;
+                                } else {
+                                    if (seier_uav[j] == 3) {
+                                        sesonger[l + 1] += 3;
+                                    }
+                                    if (seier_uav[j] == 2) {
+                                        sesonger[l + 1] += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                sesong1 = sesonger[0] || "";
+                sesong2 = sesonger[1];
+                sesong3 = sesonger[2];
+                sesong4 = sesonger[3];
+            }
         }
-      }
-      let seier_uav = [];
-      if (menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)] && (((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].split(",").length - 1) >= 35 && aar_etter_forste_periode - 3+l < 3) || ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].split(",").length - 1) >= 39 && aar_etter_forste_periode - 3+l >= 3))) {
-        if (aar_etter_forste_periode - 3+l < 3) {
-        seier_uav = ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replace(/([^\,]*\,){35}/, '').split(",");
-        }
-        else {
-        seier_uav = ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replace(/([^\,]*\,){39}/, '').split(",");
-        }
-        for (j = 0; j < seier_uav.length; j++) {
-        if (seier_uav[j] && [0,3,8,11,17,20,26].includes(j)) {
-          if (aar_etter_forste_periode - 3+l < 3) {
-          sesonger[l+1] += seier_uav[j]-1;
-          }
-          else {
-          if (seier_uav[j] == 3) {
-            sesonger[l+1] += 3;
-          }
-          if (seier_uav[j] == 2) {
-            sesonger[l+1] += 1
-          }
-          }
-        }
-        }
-      }
-      }
-          sesong1 = sesonger[0] || "";
-          sesong2 = sesonger[1];
-          sesong3 = sesonger[2];
-          sesong4 = sesonger[3];
-          // if (menyvalg[i][9 + ((aar_etter_forste_periode - 1) * antall_MV_elem)] == 0) {sesong4 = 0}
-          // if (menyvalg[i][9 + ((aar_etter_forste_periode - 2) * antall_MV_elem)] == 0) {sesong3 = 0}
-          // if (menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)] == 0) {sesong2 = 0}
-          // if (aar_etter_forste_periode >= 4) {
-          //   sesong1 = menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] || ""}
-          //   if (menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] == 0) {sesong1 = 0}
-      
-          
-            if (sesong1 !== false || sesong2 !== false || sesong3 !== false || sesong4 !== false) {
-            assos_ranking_array.push(((sesong4||0)+(sesong3||0)+(sesong2||0)+(sesong1||0)).toFixed(3))
+                // if (menyvalg[i][9 + ((aar_etter_forste_periode - 1) * antall_MV_elem)] == 0) {sesong4 = 0}
+                // if (menyvalg[i][9 + ((aar_etter_forste_periode - 2) * antall_MV_elem)] == 0) {sesong3 = 0}
+                // if (menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)] == 0) {sesong2 = 0}
+                // if (aar_etter_forste_periode >= 4) {
+                //   sesong1 = menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] || ""}
+                //   if (menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] == 0) {sesong1 = 0}
+
+        if (sesong1 !== false ||sesong2 !== false ||sesong3 !== false ||sesong4 !== false) {
+            assos_ranking_array.push(
+                ((sesong4 || 0) +(sesong3 || 0) +(sesong2 || 0) +(sesong1 || 0)).toFixed(3));
             for (p = 0; p < landskoeffisienter.length; p++) {
-              if (landskoeffisienter[p][0] == menyvalg[i][1]) {
-                assos_ranking_array.push(NA_poeng_og_assosiasjon[p][0])
-                assos_ranking_array.push(NA_poeng_og_assosiasjon[p][2])
-                assos_ranking_array.push((Math.floor(((NA_poeng_og_assosiasjon[p][1]*1000)/4))/1000).toFixed(3))
-              }
+                if (landskoeffisienter[p][0] == menyvalg[i][1]) {
+                    assos_ranking_array.push(NA_poeng_og_assosiasjon[p][0]);
+                    assos_ranking_array.push(NA_poeng_og_assosiasjon[p][2]);
+                    assos_ranking_array.push((Math.floor((NA_poeng_og_assosiasjon[p][1] * 1000) /4) / 1000).toFixed(3));
+                }
             }
-            if (sesong4 !== "" || sesong3 !== "" || sesong2 !== "" || sesong1 !== "") {
-              if (sesong4 !== "") {
-                sesong4 = sesong4.toFixed(3)}
-              if (sesong3 !== "") {
-                sesong3 = sesong3.toFixed(3)}
-              if (sesong2 !== "") {
-                sesong2 = sesong2.toFixed(3)}
-              if (sesong1 !== "") {
-                sesong1 = sesong1.toFixed(3)}
-              assos_ranking_array.push(sesong4);
-              assos_ranking_array.push(sesong3);
-              assos_ranking_array.push(sesong2);
-              assos_ranking_array.push(sesong1);
-							assos_ranking_array.push([0,besteRunde,besteRundeSesong]);
-              ranking_array.push(assos_ranking_array)
-              // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
-              // }
+            if (sesong4 !== "" ||sesong3 !== "" ||sesong2 !== "" ||sesong1 !== "") {
+                if (sesong4 !== "") {
+                    sesong4 = sesong4.toFixed(3);
+                }
+                if (sesong3 !== "") {
+                    sesong3 = sesong3.toFixed(3);
+                }
+                if (sesong2 !== "") {
+                    sesong2 = sesong2.toFixed(3);
+                }
+                if (sesong1 !== "") {
+                    sesong1 = sesong1.toFixed(3);
+                }
+                assos_ranking_array.push(sesong4);
+                assos_ranking_array.push(sesong3);
+                assos_ranking_array.push(sesong2);
+                assos_ranking_array.push(sesong1);
+                assos_ranking_array.push([0,besteRunde,besteRundeSesong,]);
+                ranking_array.push(assos_ranking_array);
+                // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
+                // }
             }
-          }
         }
-      }
     }
   }
 	for (let x = 0; x < ranking_array.length; x++) {
@@ -1053,6 +1060,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong3}</a>`
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`}
     else if (aar_etter_forste_periode == 7) {
+      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong1}</a>`}
     let marign_venstre = '<nobr translate="no" class="marign_venstre">';
     if (i == 0) {marign_venstre = '<nobr translate="no" id="logo_navn" class="marign_venstre">'}
