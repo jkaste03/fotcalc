@@ -73,7 +73,7 @@ function endre_sessong(clicked_id) {
     document.getElementById('sessong_kontroller_1').disabled = true;
     document.getElementById('sessong_kontroller_2').disabled = false;
   }
-  else if (aarstall == 3) {
+  else if (aarstall == 4) {
     document.getElementById('sessong_kontroller_1').disabled = false;
     document.getElementById('sessong_kontroller_2').disabled = true;
   }
@@ -115,7 +115,7 @@ if (aarstall == 0) {
   document.getElementById('sessong_kontroller_1').disabled = true;
   document.getElementById('sessong_kontroller_2').disabled = false;
 }
-else if (aarstall == 3) {
+else if (aarstall == 4) {
   document.getElementById('sessong_kontroller_1').disabled = false;
   document.getElementById('sessong_kontroller_2').disabled = true;
 }

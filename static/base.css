@@ -722,8 +722,16 @@ html {
     padding-bottom: 5px;
 }
 
+.ikke-pensjonert {
+    background-color: rgb(211, 255, 211);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 /* Grunnleggende shine-effekt på teksten */
-#opta_power_rankings_chart {
+#opta_power_rankings_chart, #fire_års_rangering {
     background: linear-gradient(
         120deg,
         rgba(0, 210, 255, 0.8) 0%,
