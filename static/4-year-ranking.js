@@ -965,7 +965,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
           //     rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9][0] + 1}</b></td>`;
           //   }
           // }
-          if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
+          if (aar_etter_forste_periode+20 >= nåværende_sesong_periode_valg[0] && aar_etter_forste_periode+17 <= nåværende_sesong_periode_valg[0]) {
             if (knapper.includes('b18') && !knapper.includes('KO') && ((!plassering.includes("4") && !plassering.includes("3") && nåværende_sesong_periode_valg[0] < 24) || nåværende_sesong_periode_valg[0] >= 24)) {
               klubbnavn_HTML_start = '<td class="klubbene fortsatt_med">';
             }
