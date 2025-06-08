@@ -301,6 +301,15 @@
       type="text/javascript" 
       src="static/hentet_fra_nettet/bootstrap.min.js"
     ></script>
+    <!-- Til slutt: -->
+    <script>
+      window.addEventListener('CookiebotOnDialogDisplay', function() {
+        var banner = document.getElementById('CybotCookiebotDialog');
+        if (banner) {
+          banner.setAttribute('data-nosnippet', '');
+        }
+      });
+    </script>
     <!--
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
