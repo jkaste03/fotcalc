@@ -223,7 +223,6 @@ function oppdater_ved_refresh() {
         for (; l < 3; l++) {
             let knapper_ = (menyvalg[i][2 + (aar_etter_forste_periode - 3 + l) * antall_MV_elem] || "").split(",");
             if (knapper_.includes("b18")) {
-                console.log(menyvalg[i][0] + " deltar" + (l + 1));
                 let plassering = (menyvalg[i][5 + (aar_etter_forste_periode - 3 + l) * antall_MV_elem] || "").split(",")[0];
                 let seierPoeng = 3;
                 if (aar_etter_forste_periode - 3 + l < 3) {

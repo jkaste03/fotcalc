@@ -412,7 +412,7 @@ const english_fire_års = [
     'The eight highest ranked clubs on this UEFA ranking (European qualification pathway), qualifies for the FIFA Club World Cup. The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with numbers to the right of their club names are in position to qualify. <span class="topp8_nr_farge">Green</span> numbers indicate that participation is guaranteed.',
-    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active Champions League countries.',
+    'Clubs with a blue background color are still in the Champions League.' /*Clubs with a green background color are from active Champions League countries.*/,
     // `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
     'Check out',
     `<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs' coefficient points</a>.</b></span>`
