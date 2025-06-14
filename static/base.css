@@ -743,7 +743,7 @@ html {
     background-clip: text; /* klipper gradient til tekstformen */
     -webkit-background-clip: text; /* Safari/WebKit-støtte */
     color: transparent; /* skjuler original tekstfarge */
-    display: inline-block; /* nødvendig for å klippe kun teksten */
+    /* display: inline-block; nødvendig for å klippe kun teksten */
     animation: shine 3s infinite linear; /* 5 sek, uendelig, jevn hastighet */
 }
 
