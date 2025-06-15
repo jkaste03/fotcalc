@@ -1,2 +1,5 @@
-/historical-opta-power-rankings/*  # matcher alle proxya kall
+/historical-opta-power-rankings/*
+  Access-Control-Allow-Origin: *
+
+/media/*
   Access-Control-Allow-Origin: *
