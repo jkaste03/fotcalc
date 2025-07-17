@@ -1,3 +1,15 @@
-/historical-opta-power-rankings/* http://ider-database.westeurope.cloudapp.azure.com:8081/historical-opta-power-rankings/:splat 200
+# -------------------------------------------------------------------
+# 1) Serve statiske assets direkte fra Netlify (ikke proxy til Spring)
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/*.{js,css,png,webmanifest,svg,ico}   /historical-opta-power-rankings/:splat   200
+/media/*.{jpg,jpeg,png,svg,webp,gif,ico}                          /media/:splat                             200
 
-/media/*   https://fotcalc.com/media/:splat    200
+# -------------------------------------------------------------------
+# 2) Proxy kun API-kall til Spring‑backend
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/api/*  https://ider-database.westeurope.cloudapp.azure.com:8081/historical-opta-power-rankings/api/:splat  200
+
+# -------------------------------------------------------------------
+# 3) SPA-fallback for alle andre ruter under /historical-opta-power-rankings
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/*     /historical-opta-power-rankings/index.html   200
