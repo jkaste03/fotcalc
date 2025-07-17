@@ -1,3 +1,26 @@
-/historical-opta-power-rankings/* http://ider-database.westeurope.cloudapp.azure.com:8081/historical-opta-power-rankings/:splat 200
+# -------------------------------------------------------------------
+# 1) Kartlegg ikon‐filene i rotnivå til media-mappen
+# -------------------------------------------------------------------
+/favicon.ico                          /media/favicon.ico                            200
+/android-chrome-192x192.png          /media/android-chrome-192x192.png             200
+/android-chrome-512x512.png          /media/android-chrome-512x512.png             200
 
-/media/*   https://fotcalc.com/media/:splat    200
+# -------------------------------------------------------------------
+# 2) Serve alle andre media‐filer direkte fra media/ i Netlify
+# -------------------------------------------------------------------
+/media/*.{jpg,jpeg,png,svg,webp,gif,ico,txt,webmanifest}   /media/:splat   200
+
+# -------------------------------------------------------------------
+# 3) Serve øvrige statiske assets for SSO‐siden (JS, CSS, manifest, SVG)
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/*.{js,css,webmanifest,svg,woff2,woff,ttf,eot}   /historical-opta-power-rankings/:splat   200
+
+# -------------------------------------------------------------------
+# 4) Proxy kun API‐kall til Spring‐backend
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/api/*   https://ider-database.westeurope.cloudapp.azure.com:8081/historical-opta-power-rankings/api/:splat   200
+
+# -------------------------------------------------------------------
+# 5) SPA‐fallback for alle andre ruter under /historical-opta-power-rankings
+# -------------------------------------------------------------------
+/historical-opta-power-rankings/*        /historical-opta-power-rankings/index.html   200
